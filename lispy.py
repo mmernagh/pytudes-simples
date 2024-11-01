@@ -208,7 +208,7 @@ def eval(x, env=global_env):
             (_, vars, exp) = x
             return Procedure(vars, exp, env)
         elif x[0] is _begin:     # (begin exp+)
-            for exp in x[1:-1]:
+            for exp in x:
                 eval(exp, env)
             x = x[-1]
         else:                    # (proc exp*)
